@@ -1,4 +1,4 @@
-package com.dongz.dropdownwarning;
+package com.dongz.widget;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

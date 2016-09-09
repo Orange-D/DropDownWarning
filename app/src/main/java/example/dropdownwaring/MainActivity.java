@@ -3,14 +3,16 @@ package example.dropdownwaring;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AnticipateOvershootInterpolator;
+import android.view.animation.BounceInterpolator;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
-import com.dongz.dropdownwarning.DropDownWarning;
+import com.dongz.widget.DropDownWarning;
 
 public class MainActivity extends AppCompatActivity {
-    boolean on = false;
-    com.dongz.dropdownwarning.DropDownWarning dropDownWarning;
+    DropDownWarning dropDownWarning;
     RelativeLayout rootView;
 
     @Override
@@ -27,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
         dropDownWarning = new DropDownWarning.Builder(getApplicationContext(), rootView)
                 .message("My Message")
                 .foregroundColor(0xffffffff)
+                .backgroundColor(0xfffe1b1b)
+                .interpolatorIn(new AccelerateInterpolator())
+                .interpolatorOut(new AccelerateInterpolator())
+                .textHeight(80)
                 .build();
         assert button != null;
         button.setOnClickListener(new View.OnClickListener() {
